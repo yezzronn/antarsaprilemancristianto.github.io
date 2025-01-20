@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafe Shop</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f3e9;
+            color: #5a4636;
+        }
+
+        header {
+            background-color: #8b4513;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #a0522d;
+            padding: 0.5rem 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .menu {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .menu-item {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .menu-item img {
+            width: 100%;
+            height: auto;
+        }
+
+        .menu-item h3 {
+            margin: 0;
+            padding: 1rem;
+        }
+
+        .menu-item p {
+            margin: 0;
+            padding: 0 1rem 1rem;
+            color: #7a6a58;
+        }
+
+        footer {
+            background-color: #5a4636;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+
+        section {
+            display: none;
+        }
+
+        section.active {
+            display: block;
+        }
+    </style>
+    <script>
+        function showSection(id) {
+            document.querySelectorAll('section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(id).classList.add('active');
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Nest TRI Caffe</h1>
+    </header>
+
+    <nav>
+        <a onclick="showSection('home')">Home</a>
+        <a onclick="showSection('menu')">Menu</a>
+        <a onclick="showSection('about')">About Us</a>
+        <a onclick="showSection('contact')">Contact</a>
+    </nav>
+
+    <div class="container">
+        <section id="home" class="active">
+            <h2>Welcome to Nest TRI Cafe</h2>
+            <p>Jika Antar Leman Dan Cristiano Bersatu Maka Jadilah Pemain Bola Hebat Bernama Sapri</p>
+        </section>
+
+        <section id="menu">
+            <h2>Our Menu</h2>
+            <div class="menu">
+                <div class="menu-item">
+                    <img src="https://media-hosting.imagekit.io//277b73c0e76549dc/download%20(3).jpg?Expires=1831945446&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=aWbKRWr5GPrX5E5RQlWTlNc5YrX8zck9MjAB~GdSjHFStsRc2bWcPlG2i-bSxKv9bdHAQ0N7LrcBYCVsDrJcIMAl3gvwBXAup5PYTh0Sd3ZK2GoLizb2dmuwkP6NpEro5qzSm3ACqVsFqFFnUCtwrap-lRMAb2Iiadd6KmEX8tdx~12NfYYWg68hhCH1xTwCcHWiNrzhMS7CVZWZ3uRuxUhf6DwQkFL8elQ9J47QAL4fo-rDRSfedEwW~XhNzapPAaXQEMIGFHF8c2Fklc1rW~X7H7sqwOlbNmbDF68Pa-oUAJWrdxERk4TJ7hmo5AUMXlSXRBE0ZQ7E~EZ1AesHFw__" alt="Classic Coffee">
+                    <h3>Classic Coffee</h3>
+                    <p>Rich and aromatic coffee brewed to perfection.</p>
+                </div>
+                <div class="menu-item">
+                    <img src="https://media-hosting.imagekit.io//59abfa6e9b374dea/coffee%20latte%20cup.jpg?Expires=1831945582&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=ylJMVvhMDfnvhZBk1UGh7Acf7iyvX7p8byg7ggD3Ft3gPDsC-gCLCZ4YVUefHgKTRgN7UsBvK1~m4oYWzizPT0RyhUxDoC7UxzCiFngvQD8QLCttjVuxlY~IAubEyfp-imxxUxfU4FATNK6~LRqD~wNBNfdr7Wl8aqwV-JRhOgIP5WOu3PS89YNsYNd7gAIoI7jF3VbwDPk6k4PFx3hph4voYxN8G3WenT3nJ~rSxJi7oMWMSX~btPKp1fUGsgHhzHSh~xiHg1dwT42CW36RQahNn7vX6djkjsmE6M4JNIeToRoUpbS83c~yOCAVix9Pi-wAnm6J68FbpbxmjxbANQ__" alt="Latte">
+                    <h3>Latte</h3>
+                    <p>Smooth espresso with steamed milk and a touch of foam.</p>
+                </div>
+                <div class="menu-item">
+                    <img src="https://media-hosting.imagekit.io//84d378c871db4570/Mini%20Strawberry%20Cheesecakes.jpg?Expires=1831945744&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=vobl2Lc~LRcJC3viqW5U3m~1ZSqcdLR6RxCoEKaiamBzOrDoju6T4GjAoFatJ7c7I0V6PzeM26L3PS3bOLS3mtwJPfzD0qe-5DiP2VNXM~geh-3BL9S-9Yw-8ta0TCsBZyz7gP7Hi6BB0kPFAt9p2xD1t3Rmwoj8r~fZviRBXoTSWGMCgKnBxlMlrmtjiuEqnZvQWfK8LgJI37yo-D3Qso6B8byLiN5lI1QKBY6ma7-6aysCQP3bH03-4CFGrsvHDUGFACNlJvM~vw~ZOOjQsIbsCU-U~PUbGFxL~2kVURzpQn8BjRHVf3jGxLTEpQWwcM5A06p15WSez57BJ79mxA__" alt="Cheesecake">
+                    <h3>Cheesecake</h3>
+                    <p>Creamy cheesecake with a graham cracker crust.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>About Us</h2>
+            <p>Nest TRI Cafe adalah tempat yang sempurna untuk menikmati kopi berkualitas tinggi, camilan lezat, dan suasana yang nyaman. Kami menyajikan berbagai jenis minuman seperti espresso, latte, cappuccino, dan teh herbal, serta aneka kue buatan tangan yang selalu segar.
+
+Dengan interior yang hangat dan desain modern, kafe kami cocok untuk bersantai sendiri, bekerja, atau menghabiskan waktu bersama teman dan keluarga. Setiap sudut Nest TRI Cafe dirancang untuk memberikan pengalaman yang menyenangkan dan membuat Anda merasa seperti di rumah.
+
+Kami juga mendukung komunitas lokal dengan menggunakan bahan-bahan segar dari petani dan pemasok lokal. Bergabunglah dengan kami untuk secangkir kebahagiaan yang akan membuat hari Anda lebih istimewa.</p>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>Email: anlesayantri@gmail.com</p>
+            <p>Phone: 0813143907871</p>
+            <p>Address: Jalan Sapri Antar Leman NO 8,Kecamatan Ronaldo,Kabupaten TRI</p>
+        </section>
+    </div>
+</body>
+</html>
